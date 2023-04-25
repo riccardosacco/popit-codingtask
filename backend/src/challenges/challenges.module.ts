@@ -4,8 +4,10 @@ import { ChallengesController } from './challenges.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Challenge } from './entities/challenge.entity';
 
+import { Content } from '../contents/entities/content.entity';
+
 @Module({
-  imports: [TypeOrmModule.forFeature([Challenge])],
+  imports: [TypeOrmModule.forFeature([Challenge, Content])],
   controllers: [ChallengesController],
   providers: [ChallengesService],
 })

@@ -30,6 +30,11 @@ export class ChallengesController {
     return this.challengesService.findOne(+id);
   }
 
+  @Get(':id/contents')
+  getRankings(@Param('id') id: string) {
+    return this.challengesService.getContents(+id);
+  }
+
   @Patch(':id')
   update(
     @Param('id') id: string,

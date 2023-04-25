@@ -18,7 +18,7 @@ export class ContentsService {
   }
 
   findAll() {
-    return this.contentsRepository.find();
+    return this.contentsRepository.find({ relations: { challenge: true } });
   }
 
   findOne(id: number) {
