@@ -1,4 +1,4 @@
-import { ImFeed, ImUser, ImCogs } from "react-icons/im";
+import { ImFeed, ImCog, ImUsers, ImImages, ImTrophy } from "react-icons/im";
 
 import Link from "next/link";
 
@@ -8,9 +8,7 @@ const Sidebar = () => {
       <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50">
         <ul className="space-y-2 font-medium">
           <li>
-            <span className="text-blue-500 text-xl font-bold tracking-tight">
-              PopIt Web
-            </span>
+            <span className="text-blue-500 text-xl font-bold">PopIt Web</span>
           </li>
           <li>
             <Link
@@ -27,18 +25,48 @@ const Sidebar = () => {
               href={"/challenges"}
               className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
             >
-              <ImUser />
+              <ImTrophy />
               <span className="flex-1 ml-3 whitespace-nowrap">Challenges</span>
             </Link>
           </li>
           <li>
-            <Link
-              href="/admin"
-              className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
-            >
-              <ImCogs />
+            <div className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
+              <ImCog />
               <span className="flex-1 ml-3 whitespace-nowrap">Admin</span>
-            </Link>
+            </div>
+            <ul className="ml-6">
+              <li>
+                <Link
+                  href="/admin/users"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                >
+                  <ImUsers />
+                  <span className="flex-1 ml-3 whitespace-nowrap">Users</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/admin/challenges"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                >
+                  <ImTrophy />
+                  <span className="flex-1 ml-3 whitespace-nowrap">
+                    Challenges
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/admin/contents"
+                  className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                >
+                  <ImImages />
+                  <span className="flex-1 ml-3 whitespace-nowrap">
+                    Contents
+                  </span>
+                </Link>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
