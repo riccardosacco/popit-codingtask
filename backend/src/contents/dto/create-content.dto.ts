@@ -1,6 +1,9 @@
+import { Challenge } from 'src/challenges/entities/challenge.entity';
+import { User } from 'src/users/entities/user.entity';
+
 export class CreateContentDto {
-  user_id: string;
-  challenge_id: string;
+  user: User;
+  challenge: Challenge;
   image_url: string;
   likes: number;
 }

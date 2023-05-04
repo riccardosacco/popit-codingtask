@@ -1,7 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  OneToMany,
+} from 'typeorm';
 
 import { User } from '../../users/entities/user.entity';
 import { Challenge } from '../../challenges/entities/challenge.entity';
+import { Comment } from 'src/comments/entities/comment.entity';
 
 @Entity()
 export class Content {
@@ -13,6 +20,9 @@ export class Content {
 
   @ManyToOne(() => Challenge)
   challenge: Challenge;
+
+  @OneToMany(() => Comment, (comment) => comment.content)
+  comments: Comment[];
 
   @Column()
   image_url: string;

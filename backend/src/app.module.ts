@@ -9,6 +9,7 @@ import { ContentsModule } from './contents/contents.module';
 import { UsersModule } from './users/users.module';
 
 import { DevtoolsModule } from '@nestjs/devtools-integration';
+import { CommentsModule } from './comments/comments.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { DevtoolsModule } from '@nestjs/devtools-integration';
     UsersModule,
     ChallengesModule,
     ContentsModule,
+    CommentsModule,
   ],
 })
 export class AppModule {
