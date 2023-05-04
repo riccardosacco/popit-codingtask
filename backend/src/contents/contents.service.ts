@@ -14,7 +14,7 @@ export class ContentsService {
     private contentsRepository: Repository<Content>,
   ) {}
   create(createContentDto: CreateContentDto) {
-    return this.contentsRepository.create(createContentDto);
+    return this.contentsRepository.save(createContentDto);
   }
 
   findAll() {

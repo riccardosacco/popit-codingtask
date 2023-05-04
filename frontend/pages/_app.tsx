@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "http://192.168.1.13:3500";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 

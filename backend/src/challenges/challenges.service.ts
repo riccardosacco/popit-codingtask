@@ -15,12 +15,12 @@ export class ChallengesService {
     private challengesRepository: Repository<Challenge>,
     @InjectRepository(Content) private contentsRepository: Repository<Content>,
   ) {}
-  create(createChallengeDto: CreateChallengeDto) {
-    return this.challengesRepository.create(createChallengeDto);
+  async create(createChallengeDto: CreateChallengeDto) {
+    return this.challengesRepository.save(createChallengeDto);
   }
 
   findAll() {
-    return this.challengesRepository.find();
+    return this.challengesRepository.find({ order: { id: 'desc' } });
   }
 
   findOne(id: number) {
